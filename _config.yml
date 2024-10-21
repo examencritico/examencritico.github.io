@@ -1,0 +1,28 @@
+title: Examen Crítico - Criticándolo todo.
+author: David Susa
+email: sergio@sergiosusa.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Criticándolo todo
+keywords: blog,examen,crítico,juegos,
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://examencritico.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+twitter_url: https://twitter.com/ExamenCritico
+facebook_url: https://www.facebook.com/ExamenCritico/
+instagram_url: https://www.instagram.com/examencritico/
+youtube_url: https://www.youtube.com/channel/UCqOp1xFhz8MjKoOhwQIjLAA
+
+# Tracker
+analytics: UA-65020023-1 # Google Analytics
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+paginate: 8
+paginate_path: "blog/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
