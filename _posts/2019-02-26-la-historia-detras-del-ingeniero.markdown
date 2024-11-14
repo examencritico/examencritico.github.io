@@ -6,7 +6,7 @@ description: Biografía corta de Sergio Susa, Ingeniero de Sistemas y Computaci�
 img: la-historia-detras-del-ingeniero.webp
 img-cover: la-historia-detras-del-ingeniero-cover.webp
 tags: [ biografía ]
-category: IRL
+category: Cine
 ---
 
 Nací el 22 de septiembre de 1986 en la ciudad de Bogotá D.C, para los que no lo saben, es la capital de Colombia, país

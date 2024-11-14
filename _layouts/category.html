@@ -2,29 +2,127 @@
 layout: main
 ---
 
-<!-- Home Start -->
-<section class="bg-half d-table w-100" style="background: url('{{site.baseurl}}/assets/images/blog/blog-header.webp')center center;">
-    <div class="bg-overlay bg-overlay-white"></div>
+<section class="category">
     <div class="container">
-        <div class="row mt-5 justify-content-center">
-            <div class="col-lg-12 text-center">
-                <div class="page-next-level">
-                    <h4 class="title"> {{ page.category-name }} </h4>
-                    <ul class="page-next bg-light d-inline-block py-2 px-4 mt-3 rounded mb-0">
-                        <li><a href="{{ site.baseurl }}/" class="text-dark">Inicio</a></li>
-                        <li>
-                            <a href="{{ site.baseurl }}/blog" class="text-dark">Blog</a></li>
-                        </li>
-                        <li>
-                            <span class="text-primary">{{ page.category-name }}</span>
-                        </li>
-                    </ul>
+        <div class="row">
+            <div class="col-md-8 text-left">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ol class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">{{ page.category-name }}</li>
+                        </ol>
+                        <h1 class="page-title">Categoría: {{ page.category-name }}</h1>
+                        <p class="page-subtitle">Showing all posts with category <i>Computer</i></p>
+                    </div>
                 </div>
-            </div>  <!--end col-->
-        </div><!--end row-->
-    </div> <!--end container-->
-</section><!--end section-->
-<!-- Home End -->
-
-{% assign posts = site.categories[page.category-name] %}
-{% include post_content.html posts=posts %}
+                <div class="line"></div>
+                {% assign posts = site.categories[page.category-name] %}
+                {% include post_content.html posts=posts %}
+            </div>
+            <div class="col-md-4 sidebar">
+                <aside>
+                    <div class="aside-body">
+                        <figure class="ads">
+                            <a href="single.html">
+                                <img src="{{site.baseurl}}/assets/images/ad.png">
+                            </a>
+                            <figcaption>Advertisement</figcaption>
+                        </figure>
+                    </div>
+                </aside>
+                <aside>
+                    <h1 class="aside-title">Recent Post</h1>
+                    <div class="aside-body">
+                        <article class="article-fw">
+                            <div class="inner">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{site.baseurl}}/assets/images/news/img12.jpg">
+                                    </a>
+                                </figure>
+                                <div class="details">
+                                    <h1><a href="single.html">Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit</a></h1>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
+                                    <div class="detail">
+                                        <div class="time">December 26, 2016</div>
+                                        <div class="category"><a href="category.html">Lifestyle</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="line"></div>
+                        <article class="article-mini">
+                            <div class="inner">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{site.baseurl}}/assets/images/news/img05.jpg">
+                                    </a>
+                                </figure>
+                                <div class="padding">
+                                    <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                                    <div class="detail">
+                                        <div class="category"><a href="category.html">Lifestyle</a></div>
+                                        <div class="time">December 22, 2016</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-mini">
+                            <div class="inner">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{site.baseurl}}/assets/images/news/img02.jpg">
+                                    </a>
+                                </figure>
+                                <div class="padding">
+                                    <h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
+                                    <div class="detail">
+                                        <div class="category"><a href="category.html">Travel</a></div>
+                                        <div class="time">December 21, 2016</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="article-mini">
+                            <div class="inner">
+                                <figure>
+                                    <a href="single.html">
+                                        <img src="{{site.baseurl}}/assets/images/news/img13.jpg">
+                                    </a>
+                                </figure>
+                                <div class="padding">
+                                    <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
+                                    <div class="detail">
+                                        <div class="category"><a href="category.html">International</a></div>
+                                        <div class="time">December 20, 2016</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </aside>
+                <aside>
+                    <div class="aside-body">
+                        <form class="newsletter">
+                            <div class="icon">
+                                <i class="ion-ios-email-outline"></i>
+                                <h1>Newsletter</h1>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" class="form-control email" placeholder="Your mail">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary"><i class="ion-paper-airplane"></i></button>
+                                </div>
+                            </div>
+                            <p>By subscribing you will receive new articles in your email.</p>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>

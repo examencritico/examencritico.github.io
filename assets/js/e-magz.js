@@ -35,13 +35,13 @@ $(function(){
 		if($("header.primary").length) {
 			$("section").eq(0).addClass("first");
 			$("section.first").css({
-				paddingTop: $("header.primary").outerHeight() + 15
+				paddingTop: $("header.primary").outerHeight() + 55
 			})			
 		}
 		$(window).on("resize",function(){
 			if($("header.primary").length) {
 				$("section.first").css({
-					paddingTop: $("header.primary").outerHeight() + 15
+					paddingTop: $("header.primary").outerHeight() + 35
 				})
 			}
 		});
