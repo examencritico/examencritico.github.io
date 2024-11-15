@@ -6,93 +6,12 @@ layout: main
     <div class="container">
         <div class="row">
             <div class="col-md-4 sidebar" id="sidebar">
-                <aside>
-                    <div class="aside-body">
-                        <figure class="ads">
-                            <img src="{{site.baseurl}}/assets/images/ad.png">
-                            <figcaption>Advertisement</figcaption>
-                        </figure>
-                    </div>
-                </aside>
-                <aside>
-                    <h1 class="aside-title">Recent Post</h1>
-                    <div class="aside-body">
-                        <article class="article-fw">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="{{site.baseurl}}/assets/images/news/img16.jpg">
-                                    </a>
-                                </figure>
-                                <div class="details">
-                                    <h1><a href="single.html">{{page.title}}</a></h1>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                    <div class="detail">
-                                        <div class="time">December 26, 2016</div>
-                                        <div class="category"><a href="category.html">Lifestyle</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <div class="line"></div>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="{{site.baseurl}}/assets/images/news/img05.jpg">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-                                    <div class="detail">
-                                        <div class="category"><a href="category.html">Lifestyle</a></div>
-                                        <div class="time">December 22, 2016</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="{{site.baseurl}}/assets/images/news/img02.jpg">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Fusce ullamcorper elit at felis cursus suscipit</a></h1>
-                                    <div class="detail">
-                                        <div class="category"><a href="category.html">Travel</a></div>
-                                        <div class="time">December 21, 2016</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="single.html">
-                                        <img src="{{site.baseurl}}/assets/images/news/img13.jpg">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="single.html">Duis aute irure dolor in reprehenderit in voluptate velit</a></h1>
-                                    <div class="detail">
-                                        <div class="category"><a href="category.html">International</a></div>
-                                        <div class="time">December 20, 2016</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </aside>
+            {% include sidebar.html %}
             </div>
             <div class="col-md-8">
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Film</li>
+                    <li><a href="{{site.baseurl}}/">Inicio</a></li>
+                    <li class="active">{{ page.category }}</li>
                 </ol>
                 <article class="article main-article">
                     <header>
@@ -100,7 +19,7 @@ layout: main
                         <ul class="details">
                             <li>Publicado el {{page.date | date: '%d de %b, %Y'}}</li>
                             <li><a>{{ page.category }}</a></li>
-                            <li>por <a href="#">{{ site.author }}</a></li>
+                            <li>por <a href="javascript:void(0)">{{ site.author }}</a></li>
                         </ul>
                     </header>
                     <div class="main">
@@ -108,17 +27,17 @@ layout: main
                     </div>
                 </article>
                 <div class="line">
-                    <div>Author</div>
+                    <div>Autor</div>
                 </div>
                 <div class="author">
                     <figure>
-                        <img src="{{site.baseurl}}/assets/images/img01.jpg">
+                        <img src="{{"/assets/images/" | prepend: site.baseurl }}david-susa.jpg">
                     </figure>
                     <div class="details">
                         <div class="job">{{ site.author_tagline }}</div>
                         <h3 class="name">{{ site.author }}</h3>
-                        <p>Nulla sagittis rhoncus nisi, vel gravida ante. Nunc lobortis condimentum elit, quis porta ipsum rhoncus vitae. Curabitur magna leo, porta vel fringilla gravida, consectetur in libero. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-                        <ul class="social trp sm">
+                        <p>{{ site.author_text }}</p>
+                        <!--<ul class="social trp sm">
                             <li>
                                 <a href="#" class="facebook">
                                     <svg><rect/></svg>
@@ -143,7 +62,7 @@ layout: main
                                     <i class="ion-social-googleplus"></i>
                                 </a>
                             </li>
-                        </ul>
+                        </ul>-->
                     </div>
                 </div>
                 <div class="line"><div>También te puede interesar</div></div>

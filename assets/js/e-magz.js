@@ -710,4 +710,34 @@ $(function(){
 	sendContactForm();
 
 	loadFile();
+
+	if (document.querySelector(".search input") !== null) {
+
+		document.querySelector(".search input").onkeydown = function (event) {
+			return event.key !== "Enter";
+		}
+
+		new autoComplete({
+			selector: '.search input',
+			minChars: 2,
+			source: function(term, suggest){
+				term = term.toLowerCase();
+
+				var choices = searchJson;
+				var suggestions = [];
+				for (i=0;i<choices.length;i++)
+					if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+				suggest(suggestions);
+			},
+			renderItem: function (item, search){
+				search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+				var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+				return '<div class="autocomplete-suggestion" data-name="'+item[0]+'" data-url="'+item[1]+'" data-val="'+search+'">'+item[0].replace(re, "<b>$1</b>")+'</div>';
+			},
+			onSelect: function(e, term, item){
+				window.location = item.getAttribute('data-url');
+			}
+		});
+	}
+
 });
